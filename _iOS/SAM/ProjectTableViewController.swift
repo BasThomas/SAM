@@ -8,9 +8,30 @@
 
 import UIKit
 
-class ProjectTableViewController: UITableViewController {
+class ProjectTableViewController: UITableViewController
+{
+    @IBOutlet var projectTableView: UITableView!
 
-    override func viewDidLoad() {
+    var projects: [Project] = []
+    
+    required init(coder aDecoder: NSCoder)
+    {
+        let project1 = Project(name: "SAM")
+        let user1 = User(name: "Bas")
+        let user2 = User(name: "Sunny")
+        let teacher1 = Teacher(name: "Ben")
+        
+        project1.addTeacher(teacher1)
+        project1.addUser(user1)
+        project1.addUser(user2)
+        
+        self.projects.append(project1)
+        
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -20,28 +41,32 @@ class ProjectTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         // Return the number of rows in the section.
-        return 2
+        return self.projects.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as DefaultTableViewCell
 
         // Configure the cell...
-        cell.defaultLabel.text = "test"
+        cell.defaultLabel.text = self.projects[indexPath.row].name
 
         return cell
     }
@@ -81,15 +106,20 @@ class ProjectTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "detail"
+        {
+            let dvc = segue.destinationViewController as DetailViewController
+            let cell = sender as DefaultTableViewCell
+            dvc.titleText = cell.defaultLabel.text!
+        }
     }
-    */
     
     // MARK: - Actions
     

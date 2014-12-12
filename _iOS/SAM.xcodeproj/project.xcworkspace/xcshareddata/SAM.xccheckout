@@ -14,11 +14,11 @@
 		<string>https://github.com/BasThomas/SAM.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SAM.xcodeproj</string>
+	<string>_iOS/SAM.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8016ADCAC5637D453268EBF1F6BAE64585C12C65</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/BasThomas/SAM.git</string>
