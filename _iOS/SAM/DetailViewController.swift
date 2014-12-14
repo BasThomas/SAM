@@ -8,18 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController
+{
+    @IBOutlet weak var timeSwitch: UISwitch!
     var titleText: String?
 
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        
-        if let titleText = self.titleText
-        {
-            self.navigationItem.title = self.titleText
-        }
     }
     
     override func viewDidLoad()
@@ -27,9 +23,20 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set the Title for this view.
+        if let titleText = self.titleText
+        {
+            self.navigationItem.title = self.titleText
+        }
+        else
+        {
+            self.navigationItem.title = "Unknown project"
+        }
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

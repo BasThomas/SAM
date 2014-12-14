@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ProjectTableViewController: UITableViewController
+class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate
 {
     @IBOutlet var projectTableView: UITableView!
 
     var projects: [Project] = []
+    var filteredProjects: [Project] = []
     
     required init(coder aDecoder: NSCoder)
     {
@@ -25,7 +26,10 @@ class ProjectTableViewController: UITableViewController
         project1.addUser(user1)
         project1.addUser(user2)
         
+        let project2 = Project(name: "Heatmap")
+        
         self.projects.append(project1)
+        self.projects.append(project2)
         
         super.init(coder: aDecoder)
     }
@@ -39,6 +43,8 @@ class ProjectTableViewController: UITableViewController
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning()
@@ -47,6 +53,20 @@ class ProjectTableViewController: UITableViewController
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Searchbar data source
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool
+    {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool
+    {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -58,15 +78,35 @@ class ProjectTableViewController: UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // Return the number of rows in the section.
-        return self.projects.count
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView
+        {
+            return self.filteredProjects.count
+        }
+        else
+        {
+            return self.projects.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as DefaultTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as DefaultTableViewCell
 
         // Configure the cell...
-        cell.defaultLabel.text = self.projects[indexPath.row].name
+        
+        var project: Project
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView
+        {
+            project = self.filteredProjects[indexPath.row]
+        }
+        else
+        {
+            project = self.projects[indexPath.row]
+        }
+        
+        cell.defaultLabel.text = project.name
 
         return cell
     }
@@ -119,6 +159,19 @@ class ProjectTableViewController: UITableViewController
             let cell = sender as DefaultTableViewCell
             dvc.titleText = cell.defaultLabel.text!
         }
+    }
+    
+    // MARK: - Methods
+    
+    func filterContentForSearchText(searchText: String)
+    {
+        self.filteredProjects = self.projects.filter(
+            {
+                (project: Project) -> Bool in
+                let stringMatch = project.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+                
+                return (stringMatch != nil)
+            })
     }
     
     // MARK: - Actions

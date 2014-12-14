@@ -10,9 +10,17 @@
             <objects>
                 <tableViewController id="v1p-Hm-HnO" customClass="ProjectTableViewController" customModule="SAM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="f7P-tt-wCE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="bd4-Ec-1U9">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="v1p-Hm-HnO" id="Dee-wY-hBi"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="default" id="fyC-En-ghT" customClass="DefaultTableViewCell" customModule="SAM" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -39,6 +47,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="defaultLabel" destination="POd-DC-tLH" id="eRh-ON-RiN"/>
+                                    <outlet property="timeSwitch" destination="hpX-jw-E0E" id="Ihe-IW-ewI"/>
                                     <segue destination="X3a-Et-N0c" kind="show" identifier="detail" id="QF4-0T-o8b"/>
                                 </connections>
                             </tableViewCell>
@@ -57,7 +66,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="projectTableView" destination="f7P-tt-wCE" id="FZ8-vt-eF5"/>
-                        <outlet property="searchDisplayController" destination="yDq-DP-veu" id="l9h-po-wac"/>
+                        <outlet property="searchDisplayController" destination="fiI-Yo-jAv" id="v8M-Js-KQB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wos-kL-Ugb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,6 +76,23 @@
                         <outlet property="searchContentsController" destination="v1p-Hm-HnO" id="MNx-Ee-OB8"/>
                         <outlet property="searchResultsDataSource" destination="v1p-Hm-HnO" id="htZ-j0-9WO"/>
                         <outlet property="searchResultsDelegate" destination="v1p-Hm-HnO" id="pcg-Cl-CpG"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="xeJ-tQ-FZH">
+                    <connections>
+                        <outlet property="delegate" destination="v1p-Hm-HnO" id="7MH-Zg-HkD"/>
+                        <outlet property="searchContentsController" destination="v1p-Hm-HnO" id="AjY-Js-btf"/>
+                        <outlet property="searchResultsDataSource" destination="v1p-Hm-HnO" id="tTy-q0-BhR"/>
+                        <outlet property="searchResultsDelegate" destination="v1p-Hm-HnO" id="I0i-3D-zQg"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="fiI-Yo-jAv">
+                    <connections>
+                        <outlet property="delegate" destination="v1p-Hm-HnO" id="JMZ-a2-C6l"/>
+                        <outlet property="searchBar" destination="bd4-Ec-1U9" id="DSk-Bc-asS"/>
+                        <outlet property="searchContentsController" destination="v1p-Hm-HnO" id="8El-iI-BcG"/>
+                        <outlet property="searchResultsDataSource" destination="v1p-Hm-HnO" id="tSL-dX-0Qv"/>
+                        <outlet property="searchResultsDelegate" destination="v1p-Hm-HnO" id="wRe-AN-0re"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -81,7 +107,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gcv-Ph-l7S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dex-99-Dzc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
