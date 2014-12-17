@@ -1,0 +1,12 @@
+http://invis.io/RB1W5MLF8
+
+Wat gebeurd er als je:
+- op de search balk klikt?
+- op het icoontje links van bijvoorbeeld 450 min klikt?
+- op een projectnaam klikt ?
+- op het icoontje links naast een projectnaam klikt?
+
+Test:
+zet de timer van het project 'SAM' aan.
+zet de timer van het project 'SAM' uit.
+geef het project 'PHP' een 7.
