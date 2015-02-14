@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RX7-Hq-1Uh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RX7-Hq-1Uh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Student Activity Monitor-->
+        <!--Projects-->
         <scene sceneID="hyC-7N-AU0">
             <objects>
                 <tableViewController id="v1p-Hm-HnO" customClass="ProjectTableViewController" customModule="SAM" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,28 +27,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyC-En-ghT" id="vPu-nW-YVl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POd-DC-tLH">
-                                            <rect key="frame" x="16" y="11" width="478" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projectname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POd-DC-tLH">
+                                            <rect key="frame" x="16" y="11" width="535" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-jw-E0E">
-                                            <rect key="frame" x="502" y="6" width="51" height="31"/>
-                                        </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="POd-DC-tLH" secondAttribute="centerY" id="H8w-8o-CSm"/>
-                                        <constraint firstItem="hpX-jw-E0E" firstAttribute="leading" secondItem="POd-DC-tLH" secondAttribute="trailing" constant="8" id="KOA-lQ-ZBk"/>
-                                        <constraint firstItem="POd-DC-tLH" firstAttribute="leading" secondItem="vPu-nW-YVl" secondAttribute="leadingMargin" constant="8" id="XVd-Ac-fVc"/>
-                                        <constraint firstAttribute="centerY" secondItem="hpX-jw-E0E" secondAttribute="centerY" id="ou3-y9-9ed"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="hpX-jw-E0E" secondAttribute="trailing" constant="8" id="rrU-lp-kx6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="POd-DC-tLH" secondAttribute="trailing" constant="8" id="O4f-ek-oPf"/>
+                                        <constraint firstAttribute="centerY" secondItem="POd-DC-tLH" secondAttribute="centerY" id="h4U-li-yvj"/>
+                                        <constraint firstItem="POd-DC-tLH" firstAttribute="leading" secondItem="vPu-nW-YVl" secondAttribute="leadingMargin" constant="8" id="rko-2p-o5p"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="defaultLabel" destination="POd-DC-tLH" id="eRh-ON-RiN"/>
-                                    <outlet property="timeSwitch" destination="hpX-jw-E0E" id="Ihe-IW-ewI"/>
-                                    <segue destination="X3a-Et-N0c" kind="show" identifier="detail" id="QF4-0T-o8b"/>
+                                    <segue destination="X3a-Et-N0c" kind="show" identifier="detail" id="Dh1-9Z-EmK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,7 +51,7 @@
                             <outlet property="delegate" destination="v1p-Hm-HnO" id="nqs-ze-t89"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Student Activity Monitor" id="9Bc-Lu-gi8">
+                    <navigationItem key="navigationItem" title="Projects" id="9Bc-Lu-gi8">
                         <barButtonItem key="rightBarButtonItem" title="Account" id="yvn-z7-mUX">
                             <connections>
                                 <action selector="account:" destination="v1p-Hm-HnO" id="BbA-Hs-NWZ"/>
@@ -65,7 +59,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="projectTableView" destination="f7P-tt-wCE" id="FZ8-vt-eF5"/>
                         <outlet property="searchDisplayController" destination="fiI-Yo-jAv" id="v8M-Js-KQB"/>
                     </connections>
                 </tableViewController>

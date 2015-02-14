@@ -8,19 +8,17 @@
 
 import UIKit
 
-class Project: NSObject
+class Project
 {
     var projectId: Int
     var name: String
-    var users: [User] = []
+    var users = [User]()
     var teacher: Teacher?
     
     init(name: String)
     {
         self.projectId = 1
         self.name = name
-        
-        super.init()
     }
     
     func addUser(user: User) -> [User]

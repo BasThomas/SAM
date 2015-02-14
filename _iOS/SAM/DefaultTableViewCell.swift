@@ -11,7 +11,8 @@ import UIKit
 class DefaultTableViewCell: UITableViewCell
 {
     @IBOutlet weak var defaultLabel: UILabel!
-    @IBOutlet weak var timeSwitch: UISwitch!
+    
+    var project: Project?
 
     override func awakeFromNib()
     {

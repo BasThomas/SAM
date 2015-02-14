@@ -11,8 +11,9 @@ import UIKit
 class DetailViewController: UIViewController
 {
     @IBOutlet weak var timeSwitch: UISwitch!
-    var titleText: String?
-
+    
+    var project: Project?
+    
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -25,9 +26,9 @@ class DetailViewController: UIViewController
         // Do any additional setup after loading the view.
         
         // Set the Title for this view.
-        if let titleText = self.titleText
+        if let titleText = self.project?.name
         {
-            self.navigationItem.title = self.titleText
+            self.navigationItem.title = titleText
         }
         else
         {

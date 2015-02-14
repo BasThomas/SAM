@@ -10,10 +10,8 @@ import UIKit
 
 class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate
 {
-    @IBOutlet var projectTableView: UITableView!
-
-    var projects: [Project] = []
-    var filteredProjects: [Project] = []
+    var projects = [Project]()
+    var filteredProjects = [Project]()
     
     required init(coder aDecoder: NSCoder)
     {
@@ -30,6 +28,8 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
         
         self.projects.append(project1)
         self.projects.append(project2)
+        
+        self.projects = sorted(self.projects) {$0.name < $1.name}
         
         super.init(coder: aDecoder)
     }
@@ -106,6 +106,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
             project = self.projects[indexPath.row]
         }
         
+        cell.project = project
         cell.defaultLabel.text = project.name
 
         return cell
@@ -145,6 +146,11 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
         return true
     }
     */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        //self.performSegueWithIdentifier("detail", sender: indexPath)
+    }
 
     // MARK: - Navigation
 
@@ -157,7 +163,8 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
         {
             let dvc = segue.destinationViewController as DetailViewController
             let cell = sender as DefaultTableViewCell
-            dvc.titleText = cell.defaultLabel.text!
+            
+            dvc.project = cell.project
         }
     }
     
