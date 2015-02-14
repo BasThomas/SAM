@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Teacher: User
+class Teacher: Student
 {
     override init(name: String)
     {

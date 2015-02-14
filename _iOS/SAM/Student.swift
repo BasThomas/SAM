@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Student.swift
 //  SAM
 //
 //  Created by Bas on 12/12/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User
+class Student
 {
     var name: String
     

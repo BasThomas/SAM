@@ -12,7 +12,7 @@ class Project
 {
     var projectId: Int
     var name: String
-    var users = [User]()
+    var students = [Student]()
     var teacher: Teacher?
     
     init(name: String)
@@ -21,11 +21,11 @@ class Project
         self.name = name
     }
     
-    func addUser(user: User) -> [User]
+    func addUser(student: Student) -> [Student]
     {
-        self.users.append(user)
+        self.students.append(student)
         
-        return self.users
+        return self.students
     }
     
     func addTeacher(teacher: Teacher) -> Teacher
@@ -33,5 +33,16 @@ class Project
         self.teacher = teacher
         
         return teacher
+    }
+    
+    func description() -> String
+    {
+        var studentString = ""
+        for student in self.students
+        {
+            studentString += "\(student.name) "
+        }
+        
+        return "Project: \(self.name) Teacher: \(self.teacher?.name) Students: \(studentString)"
     }
 }

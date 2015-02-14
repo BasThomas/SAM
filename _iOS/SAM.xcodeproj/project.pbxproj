@@ -15,7 +15,7 @@
 		49B761791A38622500BCE9EB /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B761781A38622500BCE9EB /* DefaultTableViewCell.swift */; };
 		49B7617E1A38673800BCE9EB /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B7617D1A38673800BCE9EB /* ProjectTableViewController.swift */; };
 		49D72E831A3AFC0C00E4B908 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D72E821A3AFC0C00E4B908 /* Project.swift */; };
-		49D72E851A3AFC2F00E4B908 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D72E841A3AFC2F00E4B908 /* User.swift */; };
+		49D72E851A3AFC2F00E4B908 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D72E841A3AFC2F00E4B908 /* Student.swift */; };
 		49E8398B1A3B000C003C3274 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8398A1A3B000C003C3274 /* Teacher.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		49B761781A38622500BCE9EB /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		49B7617D1A38673800BCE9EB /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		49D72E821A3AFC0C00E4B908 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		49D72E841A3AFC2F00E4B908 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49D72E841A3AFC2F00E4B908 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		49E8398A1A3B000C003C3274 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				49D72E821A3AFC0C00E4B908 /* Project.swift */,
-				49D72E841A3AFC2F00E4B908 /* User.swift */,
+				49D72E841A3AFC2F00E4B908 /* Student.swift */,
 				49E8398A1A3B000C003C3274 /* Teacher.swift */,
 			);
 			name = Model;
@@ -179,7 +179,7 @@
 				49B7617E1A38673800BCE9EB /* ProjectTableViewController.swift in Sources */,
 				49E8398B1A3B000C003C3274 /* Teacher.swift in Sources */,
 				49D72E831A3AFC0C00E4B908 /* Project.swift in Sources */,
-				49D72E851A3AFC2F00E4B908 /* User.swift in Sources */,
+				49D72E851A3AFC2F00E4B908 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

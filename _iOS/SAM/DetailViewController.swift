@@ -34,6 +34,8 @@ class DetailViewController: UIViewController
         {
             self.navigationItem.title = "Unknown project"
         }
+        
+        println(self.project?.description())
     }
 
     override func didReceiveMemoryWarning()

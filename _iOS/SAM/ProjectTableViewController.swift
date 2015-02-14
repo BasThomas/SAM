@@ -16,18 +16,19 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     required init(coder aDecoder: NSCoder)
     {
         let project1 = Project(name: "SAM")
-        let user1 = User(name: "Bas")
-        let user2 = User(name: "Sunny")
+        let user1 = Student(name: "Bas")
+        let user2 = Student(name: "Sunny")
         let teacher1 = Teacher(name: "Ben")
         
         project1.addTeacher(teacher1)
         project1.addUser(user1)
         project1.addUser(user2)
         
-        let project2 = Project(name: "Heatmap")
+        let project2 = Project(name: "Pepper's Ghost")
+        let project3 = Project(name: "STRP")
+        let project4 = Project(name: "KPN")
         
-        self.projects.append(project1)
-        self.projects.append(project2)
+        self.projects += [project1, project2, project3, project4]
         
         self.projects = sorted(self.projects) {$0.name < $1.name}
         
