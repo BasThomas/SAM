@@ -176,12 +176,11 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
         self.filteredProjects = self.projects.filter(
             {
                 (project: Project) -> Bool in
-                let stringMatch = project.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-                
-                return (stringMatch != nil)
+				
+				return project.name.lowercaseString.hasPrefix(searchText.lowercaseString)
             })
     }
-    
+	
     // MARK: - Actions
     
     @IBAction func account(sender: AnyObject)

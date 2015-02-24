@@ -34,8 +34,8 @@ class DetailViewController: UIViewController
         {
             self.navigationItem.title = "Unknown project"
         }
-        
-        println(self.project?.description())
+		
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning()
@@ -43,7 +43,6 @@ class DetailViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
