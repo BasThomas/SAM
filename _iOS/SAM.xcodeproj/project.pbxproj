@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4916D02A1AB9C12F00B33CFC /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4916D0291AB9C12100B33CFC /* fontawesome-webfont.ttf */; };
+		4916D02E1AB9C84A00B33CFC /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916D02D1AB9C84A00B33CFC /* AddUserTableViewController.swift */; };
 		493E46D41AB9AA6200FF697E /* SAMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 493E46D31AB9AA6200FF697E /* SAMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493E46DA1AB9AA6200FF697E /* SAMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; };
 		493E46E31AB9AA6200FF697E /* SAMKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46E21AB9AA6200FF697E /* SAMKitTests.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		4916D0291AB9C12100B33CFC /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		4916D02D1AB9C84A00B33CFC /* AddUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
 		493E46CF1AB9AA6200FF697E /* SAMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		493E46D21AB9AA6200FF697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		493E46D31AB9AA6200FF697E /* SAMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMKit.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				49B761781A38622500BCE9EB /* DefaultTableViewCell.swift */,
 				493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */,
 				493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */,
+				4916D02D1AB9C84A00B33CFC /* AddUserTableViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B761791A38622500BCE9EB /* DefaultTableViewCell.swift in Sources */,
+				4916D02E1AB9C84A00B33CFC /* AddUserTableViewController.swift in Sources */,
 				49B761571A38614900BCE9EB /* AppDelegate.swift in Sources */,
 				49B7617E1A38673800BCE9EB /* ProjectTableViewController.swift in Sources */,
 				493E46F01AB9B7F800FF697E /* DetailTableViewController.swift in Sources */,

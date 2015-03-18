@@ -125,11 +125,4 @@ class DetailTableViewController: UITableViewController
         return true
     }
     */
-	
-	// MARK: - Actions
-	
-	@IBAction func addUser(sender: AnyObject)
-	{
-		println("adding user")
-	}
 }

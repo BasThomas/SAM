@@ -121,18 +121,91 @@
                         <barButtonItem key="rightBarButtonItem" title="Add" id="XHB-2u-BhF">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="addUser:" destination="Jwh-hX-eQ5" id="3E2-qX-kTP"/>
+                                <segue destination="jkD-ea-EBC" kind="presentation" identifier="addUser" id="oE8-uh-uXW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addUserBarButtonItem" destination="XHB-2u-BhF" id="IBO-9g-kEy"/>
+                        <outlet property="addUserBarButtonItem" destination="XHB-2u-BhF" id="iIB-SG-G3s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uew-d1-OHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1616" y="-2590"/>
+        </scene>
+        <!--Add user-->
+        <scene sceneID="4jV-cL-Sr6">
+            <objects>
+                <tableViewController id="h7F-dz-kRT" customClass="AddUserTableViewController" customModule="SAM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bi4-MS-hqu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="0g4-In-jqa">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zW6-xi-2c8">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zW6-xi-2c8" id="7Pe-hA-iY7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="14Y-dJ-4Gg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="14Y-dJ-4Gg" id="PIT-o1-nF6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a9a-P1-IJ8">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9a-P1-IJ8" id="QaF-iD-diI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h7F-dz-kRT" id="QqZ-gv-kYa"/>
+                            <outlet property="delegate" destination="h7F-dz-kRT" id="YIp-ca-tD0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add user" id="FuG-lD-upC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vQG-mD-XZa">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="exitView:" destination="h7F-dz-kRT" id="aBz-EL-jHS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4rW-JK-raN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addUser:" destination="h7F-dz-kRT" id="zgu-nS-haK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uU6-JA-KFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3142" y="-2590"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DFf-Ix-PGg">
+            <objects>
+                <navigationController id="jkD-ea-EBC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Yhs-7O-uXA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h7F-dz-kRT" kind="relationship" relationship="rootViewController" id="uld-sn-BzT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHE-YG-tjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="-2590"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pGv-hK-kWh">
