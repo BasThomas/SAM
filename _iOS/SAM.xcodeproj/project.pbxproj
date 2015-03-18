@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493E46D41AB9AA6200FF697E /* SAMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 493E46D31AB9AA6200FF697E /* SAMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		493E46DA1AB9AA6200FF697E /* SAMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; };
+		493E46E31AB9AA6200FF697E /* SAMKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46E21AB9AA6200FF697E /* SAMKitTests.swift */; };
+		493E46E61AB9AA6200FF697E /* SAMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; };
+		493E46E71AB9AA6200FF697E /* SAMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		499F28D41A3876050028E10A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F28D31A3876050028E10A /* DetailViewController.swift */; };
 		49B761571A38614900BCE9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B761561A38614900BCE9EB /* AppDelegate.swift */; };
 		49B7615C1A38614900BCE9EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B7615A1A38614900BCE9EB /* Main.storyboard */; };
@@ -19,7 +24,51 @@
 		49E8398B1A3B000C003C3274 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8398A1A3B000C003C3274 /* Teacher.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		493E46DB1AB9AA6200FF697E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B761491A38614900BCE9EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 493E46CE1AB9AA6200FF697E;
+			remoteInfo = SAMKit;
+		};
+		493E46DD1AB9AA6200FF697E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B761491A38614900BCE9EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B761501A38614900BCE9EB;
+			remoteInfo = SAM;
+		};
+		493E46E41AB9AA6200FF697E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B761491A38614900BCE9EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 493E46CE1AB9AA6200FF697E;
+			remoteInfo = SAMKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		493E46ED1AB9AA6200FF697E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				493E46E71AB9AA6200FF697E /* SAMKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		493E46CF1AB9AA6200FF697E /* SAMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493E46D21AB9AA6200FF697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493E46D31AB9AA6200FF697E /* SAMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMKit.h; sourceTree = "<group>"; };
+		493E46D91AB9AA6200FF697E /* SAMKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAMKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		493E46E11AB9AA6200FF697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493E46E21AB9AA6200FF697E /* SAMKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAMKitTests.swift; sourceTree = "<group>"; };
 		499F28D31A3876050028E10A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		49B761511A38614900BCE9EB /* SAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B761551A38614900BCE9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,26 +78,81 @@
 		49B761601A38614900BCE9EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49B761781A38622500BCE9EB /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		49B7617D1A38673800BCE9EB /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
-		49D72E821A3AFC0C00E4B908 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		49D72E841A3AFC2F00E4B908 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		49E8398A1A3B000C003C3274 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		49D72E821A3AFC0C00E4B908 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = ../SAM/Project.swift; sourceTree = "<group>"; };
+		49D72E841A3AFC2F00E4B908 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = ../SAM/Student.swift; sourceTree = "<group>"; };
+		49E8398A1A3B000C003C3274 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Teacher.swift; path = ../SAM/Teacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		49B7614E1A38614900BCE9EB /* Frameworks */ = {
+		493E46CB1AB9AA6200FF697E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		493E46D61AB9AA6200FF697E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493E46DA1AB9AA6200FF697E /* SAMKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B7614E1A38614900BCE9EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493E46E61AB9AA6200FF697E /* SAMKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493E46D01AB9AA6200FF697E /* SAMKit */ = {
+			isa = PBXGroup;
+			children = (
+				493E46D31AB9AA6200FF697E /* SAMKit.h */,
+				49D72E821A3AFC0C00E4B908 /* Project.swift */,
+				49D72E841A3AFC2F00E4B908 /* Student.swift */,
+				49E8398A1A3B000C003C3274 /* Teacher.swift */,
+				493E46D11AB9AA6200FF697E /* Supporting Files */,
+			);
+			path = SAMKit;
+			sourceTree = "<group>";
+		};
+		493E46D11AB9AA6200FF697E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				493E46D21AB9AA6200FF697E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		493E46DF1AB9AA6200FF697E /* SAMKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				493E46E21AB9AA6200FF697E /* SAMKitTests.swift */,
+				493E46E01AB9AA6200FF697E /* Supporting Files */,
+			);
+			path = SAMKitTests;
+			sourceTree = "<group>";
+		};
+		493E46E01AB9AA6200FF697E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				493E46E11AB9AA6200FF697E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		49B761481A38614900BCE9EB = {
 			isa = PBXGroup;
 			children = (
 				49B761531A38614900BCE9EB /* SAM */,
+				493E46D01AB9AA6200FF697E /* SAMKit */,
+				493E46DF1AB9AA6200FF697E /* SAMKitTests */,
 				49B761521A38614900BCE9EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				49B761511A38614900BCE9EB /* SAM.app */,
+				493E46CF1AB9AA6200FF697E /* SAMKit.framework */,
+				493E46D91AB9AA6200FF697E /* SAMKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				49B7617F1A38674300BCE9EB /* Control */,
-				49B7617A1A38661500BCE9EB /* Model */,
 				49B761561A38614900BCE9EB /* AppDelegate.swift */,
 				49B7615A1A38614900BCE9EB /* Main.storyboard */,
 				49B7615D1A38614900BCE9EB /* Images.xcassets */,
@@ -83,16 +188,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		49B7617A1A38661500BCE9EB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				49D72E821A3AFC0C00E4B908 /* Project.swift */,
-				49D72E841A3AFC2F00E4B908 /* Student.swift */,
-				49E8398A1A3B000C003C3274 /* Teacher.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		49B7617F1A38674300BCE9EB /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +200,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		493E46CC1AB9AA6200FF697E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493E46D41AB9AA6200FF697E /* SAMKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		493E46CE1AB9AA6200FF697E /* SAMKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493E46EC1AB9AA6200FF697E /* Build configuration list for PBXNativeTarget "SAMKit" */;
+			buildPhases = (
+				493E46CA1AB9AA6200FF697E /* Sources */,
+				493E46CB1AB9AA6200FF697E /* Frameworks */,
+				493E46CC1AB9AA6200FF697E /* Headers */,
+				493E46CD1AB9AA6200FF697E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAMKit;
+			productName = SAMKit;
+			productReference = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		493E46D81AB9AA6200FF697E /* SAMKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493E46EE1AB9AA6200FF697E /* Build configuration list for PBXNativeTarget "SAMKitTests" */;
+			buildPhases = (
+				493E46D51AB9AA6200FF697E /* Sources */,
+				493E46D61AB9AA6200FF697E /* Frameworks */,
+				493E46D71AB9AA6200FF697E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				493E46DC1AB9AA6200FF697E /* PBXTargetDependency */,
+				493E46DE1AB9AA6200FF697E /* PBXTargetDependency */,
+			);
+			name = SAMKitTests;
+			productName = SAMKitTests;
+			productReference = 493E46D91AB9AA6200FF697E /* SAMKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		49B761501A38614900BCE9EB /* SAM */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49B761701A38614A00BCE9EB /* Build configuration list for PBXNativeTarget "SAM" */;
@@ -113,10 +256,12 @@
 				49B7614D1A38614900BCE9EB /* Sources */,
 				49B7614E1A38614900BCE9EB /* Frameworks */,
 				49B7614F1A38614900BCE9EB /* Resources */,
+				493E46ED1AB9AA6200FF697E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				493E46E51AB9AA6200FF697E /* PBXTargetDependency */,
 			);
 			name = SAM;
 			productName = SAM;
@@ -132,6 +277,13 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Bas;
 				TargetAttributes = {
+					493E46CE1AB9AA6200FF697E = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					493E46D81AB9AA6200FF697E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 49B761501A38614900BCE9EB;
+					};
 					49B761501A38614900BCE9EB = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -151,11 +303,27 @@
 			projectRoot = "";
 			targets = (
 				49B761501A38614900BCE9EB /* SAM */,
+				493E46CE1AB9AA6200FF697E /* SAMKit */,
+				493E46D81AB9AA6200FF697E /* SAMKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		493E46CD1AB9AA6200FF697E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493E46D71AB9AA6200FF697E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49B7614F1A38614900BCE9EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +337,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		493E46CA1AB9AA6200FF697E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493E46D51AB9AA6200FF697E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493E46E31AB9AA6200FF697E /* SAMKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49B7614D1A38614900BCE9EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +367,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		493E46DC1AB9AA6200FF697E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 493E46CE1AB9AA6200FF697E /* SAMKit */;
+			targetProxy = 493E46DB1AB9AA6200FF697E /* PBXContainerItemProxy */;
+		};
+		493E46DE1AB9AA6200FF697E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B761501A38614900BCE9EB /* SAM */;
+			targetProxy = 493E46DD1AB9AA6200FF697E /* PBXContainerItemProxy */;
+		};
+		493E46E51AB9AA6200FF697E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 493E46CE1AB9AA6200FF697E /* SAMKit */;
+			targetProxy = 493E46E41AB9AA6200FF697E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		49B7615A1A38614900BCE9EB /* Main.storyboard */ = {
@@ -205,6 +406,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		493E46E81AB9AA6200FF697E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SAMKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		493E46E91AB9AA6200FF697E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SAMKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		493E46EA1AB9AA6200FF697E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SAMKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAM.app/SAM";
+			};
+			name = Debug;
+		};
+		493E46EB1AB9AA6200FF697E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SAMKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAM.app/SAM";
+			};
+			name = Release;
+		};
 		49B7616E1A38614A00BCE9EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -305,6 +586,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		493E46EC1AB9AA6200FF697E /* Build configuration list for PBXNativeTarget "SAMKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493E46E81AB9AA6200FF697E /* Debug */,
+				493E46E91AB9AA6200FF697E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		493E46EE1AB9AA6200FF697E /* Build configuration list for PBXNativeTarget "SAMKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493E46EA1AB9AA6200FF697E /* Debug */,
+				493E46EB1AB9AA6200FF697E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		49B7614C1A38614900BCE9EB /* Build configuration list for PBXProject "SAM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class Teacher: Student
+public class Teacher: Student
 {
-    override init(name: String)
+	public override init(_ surName: String, lastName: String)
     {
-        super.init(name: name)
+		super.init(surName, lastName: lastName)
     }
 }

@@ -8,12 +8,20 @@
 
 import UIKit
 
-class Student
+public class Student
 {
-    var name: String
+	public var surName: String
+    public var lastName: String
+	
+	public var fullName: String
+	
+	public var grade: Int?
     
-    init(name: String)
+	public init(_ surName: String, lastName: String)
     {
-        self.name = name
+        self.surName = surName
+		self.lastName = lastName
+		
+		self.fullName = " ".join([surName, lastName])
     }
 }

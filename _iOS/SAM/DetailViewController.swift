@@ -10,8 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController
 {
-    @IBOutlet weak var timeSwitch: UISwitch!
-    
+	@IBOutlet weak var projectLabel: UILabel!
+	@IBOutlet weak var studentsLabel: UILabel!
+	@IBOutlet weak var teacherLabel: UILabel!
+	
     var project: Project?
     
     required init(coder aDecoder: NSCoder)
@@ -24,18 +26,37 @@ class DetailViewController: UIViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         // Set the Title for this view.
-        if let titleText = self.project?.name
+        if let project = self.project
         {
-            self.navigationItem.title = titleText
+            self.navigationItem.title = project.name
+			
+			self.projectLabel.text = "\(project.name) (\(project.id))"
+			
+			var studNames = [String]()
+			
+			for student in project.students
+			{
+				studNames.append(student.fullName)
+			}
+			
+			if studNames != [String]()
+			{
+				self.studentsLabel.text = " & ".join(studNames)
+			}
+			else
+			{
+				self.studentsLabel.text = "No students"
+			}
+			
+			self.teacherLabel.text = project.teacher?.fullName ?? "No teacher"
         }
         else
         {
             self.navigationItem.title = "Unknown project"
         }
-		
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning()

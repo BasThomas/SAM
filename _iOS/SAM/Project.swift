@@ -8,41 +8,30 @@
 
 import UIKit
 
-class Project
+public class Project
 {
-    var projectId: Int
-    var name: String
-    var students = [Student]()
-    var teacher: Teacher?
+    public var id: Int
+    public var name: String
+    public var students = [Student]()
+    public var teacher: Teacher?
     
-    init(name: String)
+    public init(name: String)
     {
-        self.projectId = 1
+        self.id = 1
         self.name = name
     }
     
-    func addUser(student: Student) -> [Student]
+    public func addUser(student: Student) -> [Student]
     {
         self.students.append(student)
         
         return self.students
     }
     
-    func addTeacher(teacher: Teacher) -> Teacher
+    public func addTeacher(teacher: Teacher) -> Teacher
     {
         self.teacher = teacher
         
         return teacher
-    }
-    
-    func description() -> String
-    {
-        var studentString = ""
-        for student in self.students
-        {
-            studentString += "\(student.name) "
-        }
-        
-        return "Project: \(self.name) Teacher: \(self.teacher?.name) Students: \(studentString)"
     }
 }

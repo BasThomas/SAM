@@ -16,10 +16,10 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     required init(coder aDecoder: NSCoder)
     {
         let project1 = Project(name: "SAM")
-        let user1 = Student(name: "Bas")
-        let user2 = Student(name: "Sunny")
-        let teacher1 = Teacher(name: "Ben")
-        
+		let user1 = Student("Bas", lastName: "Broek")
+		let user2 = Student("Sunny", lastName: "Feijen")
+		let teacher1 = Teacher("Ben", lastName: "Schreur")
+		
         project1.addTeacher(teacher1)
         project1.addUser(user1)
         project1.addUser(user2)
@@ -38,12 +38,6 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.reloadData()
     }
@@ -59,12 +53,14 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool
     {
         self.filterContentForSearchText(searchString)
+		
         return true
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool
     {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+		
         return true
     }
     
@@ -123,11 +119,15 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 
     /*
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+	{
+        if editingStyle == .Delete
+		{
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+        }
+		else if editingStyle == .Insert
+		{
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
@@ -154,12 +154,9 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
 
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+	
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         if segue.identifier == "detail"
         {
             let dvc = segue.destinationViewController as DetailViewController
@@ -174,18 +171,10 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     func filterContentForSearchText(searchText: String)
     {
         self.filteredProjects = self.projects.filter(
-            {
-                (project: Project) -> Bool in
-				
-				return project.name.lowercaseString.hasPrefix(searchText.lowercaseString)
-            })
+		{
+			(project: Project) -> Bool in
+			
+			return project.name.lowercaseString.hasPrefix(searchText.lowercaseString)
+		})
     }
-	
-    // MARK: - Actions
-    
-    @IBAction func account(sender: AnyObject)
-    {
-        println("Getting account prefs")
-    }
-    
 }
