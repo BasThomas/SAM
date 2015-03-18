@@ -34,4 +34,21 @@ public class Project
         
         return teacher
     }
+	
+	public func userCount() -> Int
+	{
+		var amount = 0
+		
+		for student in self.students
+		{
+			amount++
+		}
+		
+		if let teacher = self.teacher
+		{
+			amount++
+		}
+		
+		return amount
+	}
 }

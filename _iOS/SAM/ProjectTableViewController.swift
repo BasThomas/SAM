@@ -159,7 +159,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     {
         if segue.identifier == "detail"
         {
-            let dvc = segue.destinationViewController as DetailViewController
+            let dvc = segue.destinationViewController as DetailTableViewController
             let cell = sender as DefaultTableViewCell
             
             dvc.project = cell.project

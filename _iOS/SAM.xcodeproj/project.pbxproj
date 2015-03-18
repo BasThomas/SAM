@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4916D02A1AB9C12F00B33CFC /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4916D0291AB9C12100B33CFC /* fontawesome-webfont.ttf */; };
 		493E46D41AB9AA6200FF697E /* SAMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 493E46D31AB9AA6200FF697E /* SAMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493E46DA1AB9AA6200FF697E /* SAMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; };
 		493E46E31AB9AA6200FF697E /* SAMKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46E21AB9AA6200FF697E /* SAMKitTests.swift */; };
 		493E46E61AB9AA6200FF697E /* SAMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; };
 		493E46E71AB9AA6200FF697E /* SAMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		499F28D41A3876050028E10A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F28D31A3876050028E10A /* DetailViewController.swift */; };
+		493E46F01AB9B7F800FF697E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */; };
+		493E46F21AB9BC6D00FF697E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */; };
 		49B761571A38614900BCE9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B761561A38614900BCE9EB /* AppDelegate.swift */; };
 		49B7615C1A38614900BCE9EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B7615A1A38614900BCE9EB /* Main.storyboard */; };
 		49B7615E1A38614900BCE9EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B7615D1A38614900BCE9EB /* Images.xcassets */; };
@@ -63,13 +65,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4916D0291AB9C12100B33CFC /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		493E46CF1AB9AA6200FF697E /* SAMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		493E46D21AB9AA6200FF697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		493E46D31AB9AA6200FF697E /* SAMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMKit.h; sourceTree = "<group>"; };
 		493E46D91AB9AA6200FF697E /* SAMKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAMKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		493E46E11AB9AA6200FF697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		493E46E21AB9AA6200FF697E /* SAMKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAMKitTests.swift; sourceTree = "<group>"; };
-		499F28D31A3876050028E10A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		49B761511A38614900BCE9EB /* SAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B761551A38614900BCE9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B761561A38614900BCE9EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		49B761541A38614900BCE9EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4916D0291AB9C12100B33CFC /* fontawesome-webfont.ttf */,
 				49B761551A38614900BCE9EB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,7 +198,8 @@
 			children = (
 				49B7617D1A38673800BCE9EB /* ProjectTableViewController.swift */,
 				49B761781A38622500BCE9EB /* DefaultTableViewCell.swift */,
-				499F28D31A3876050028E10A /* DetailViewController.swift */,
+				493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */,
+				493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4916D02A1AB9C12F00B33CFC /* fontawesome-webfont.ttf in Resources */,
 				49B7615C1A38614900BCE9EB /* Main.storyboard in Resources */,
 				49B761611A38614900BCE9EB /* LaunchScreen.xib in Resources */,
 				49B7615E1A38614900BCE9EB /* Images.xcassets in Resources */,
@@ -356,10 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499F28D41A3876050028E10A /* DetailViewController.swift in Sources */,
 				49B761791A38622500BCE9EB /* DefaultTableViewCell.swift in Sources */,
 				49B761571A38614900BCE9EB /* AppDelegate.swift in Sources */,
 				49B7617E1A38673800BCE9EB /* ProjectTableViewController.swift in Sources */,
+				493E46F01AB9B7F800FF697E /* DetailTableViewController.swift in Sources */,
+				493E46F21AB9BC6D00FF697E /* UserTableViewCell.swift in Sources */,
 				49E8398B1A3B000C003C3274 /* Teacher.swift in Sources */,
 				49D72E831A3AFC0C00E4B908 /* Project.swift in Sources */,
 				49D72E851A3AFC2F00E4B908 /* Student.swift in Sources */,
@@ -593,6 +601,7 @@
 				493E46E91AB9AA6200FF697E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		493E46EE1AB9AA6200FF697E /* Build configuration list for PBXNativeTarget "SAMKitTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +610,7 @@
 				493E46EB1AB9AA6200FF697E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49B7614C1A38614900BCE9EB /* Build configuration list for PBXProject "SAM" */ = {
 			isa = XCConfigurationList;
