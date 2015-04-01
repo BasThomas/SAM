@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAMKit
 
 class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate
 {
@@ -18,27 +19,44 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
         let project1 = Project(name: "SAM")
 		let user1 = Student("Bas", lastName: "Broek")
 		let user2 = Student("Sunny", lastName: "Feijen")
-		let teacher1 = Teacher("Ben", lastName: "Schreur")
+		let user3 = Student("Stan", lastName: "Jansen")
+		let user4 = Student("Joris", lastName: "van Oers")
+		let user5 = Student("Aline", lastName: "Swinkels")
+		let teacher1 = Teacher("Coen", lastName: "Crombach")
 		
         project1.addTeacher(teacher1)
         project1.addUser(user1)
         project1.addUser(user2)
-        
+		project1.addUser(user3)
+		project1.addUser(user4)
+		project1.addUser(user5)
+		
         let project2 = Project(name: "Pepper's Ghost")
         let project3 = Project(name: "STRP")
         let project4 = Project(name: "KPN")
         
         self.projects += [project1, project2, project3, project4]
         
-        self.projects = sorted(self.projects) {$0.name < $1.name}
-        
         super.init(coder: aDecoder)
+		
+		self.sortProjects()
     }
-    
+	
+	override func viewWillAppear(animated: Bool)
+	{
+		super.viewWillAppear(animated)
+		
+		self.searchDisplayController!.searchBar.tintColor = .fontysColor()
+		
+		// Fix hairline
+		self.searchDisplayController!.searchBar.layer.borderColor = UIColor.searchBarColor().CGColor
+		self.searchDisplayController!.searchBar.layer.borderWidth = 1
+	}
+	
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+		
         self.tableView.reloadData()
     }
 
@@ -177,4 +195,9 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 			return project.name.lowercaseString.hasPrefix(searchText.lowercaseString)
 		})
     }
+	
+	func sortProjects()
+	{
+		self.projects = sorted(self.projects) {$0.name < $1.name}
+	}
 }

@@ -16,6 +16,9 @@
 		493E46E71AB9AA6200FF697E /* SAMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 493E46CF1AB9AA6200FF697E /* SAMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		493E46F01AB9B7F800FF697E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */; };
 		493E46F21AB9BC6D00FF697E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */; };
+		49A09DB01ACC0841004DFD31 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A09DAF1ACC0841004DFD31 /* Request.swift */; };
+		49A09DB21ACC0A92004DFD31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A09DB11ACC0A92004DFD31 /* Extensions.swift */; };
+		49A09DB41ACC0B0E004DFD31 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A09DB31ACC0B0E004DFD31 /* TabBarViewController.swift */; };
 		49B761571A38614900BCE9EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B761561A38614900BCE9EB /* AppDelegate.swift */; };
 		49B7615C1A38614900BCE9EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B7615A1A38614900BCE9EB /* Main.storyboard */; };
 		49B7615E1A38614900BCE9EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B7615D1A38614900BCE9EB /* Images.xcassets */; };
@@ -76,6 +79,9 @@
 		493E46E21AB9AA6200FF697E /* SAMKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAMKitTests.swift; sourceTree = "<group>"; };
 		493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		49A09DAF1ACC0841004DFD31 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		49A09DB11ACC0A92004DFD31 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		49A09DB31ACC0B0E004DFD31 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		49B761511A38614900BCE9EB /* SAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B761551A38614900BCE9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B761561A38614900BCE9EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 				49D72E821A3AFC0C00E4B908 /* Project.swift */,
 				49D72E841A3AFC2F00E4B908 /* Student.swift */,
 				49E8398A1A3B000C003C3274 /* Teacher.swift */,
+				49A09DAF1ACC0841004DFD31 /* Request.swift */,
+				49A09DB11ACC0A92004DFD31 /* Extensions.swift */,
 				493E46D11AB9AA6200FF697E /* Supporting Files */,
 			);
 			path = SAMKit;
@@ -203,6 +211,7 @@
 				493E46EF1AB9B7F800FF697E /* DetailTableViewController.swift */,
 				493E46F11AB9BC6D00FF697E /* UserTableViewCell.swift */,
 				4916D02D1AB9C84A00B33CFC /* AddUserTableViewController.swift */,
+				49A09DB31ACC0B0E004DFD31 /* TabBarViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -351,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A09DB01ACC0841004DFD31 /* Request.swift in Sources */,
+				49A09DB21ACC0A92004DFD31 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +385,7 @@
 				493E46F21AB9BC6D00FF697E /* UserTableViewCell.swift in Sources */,
 				49E8398B1A3B000C003C3274 /* Teacher.swift in Sources */,
 				49D72E831A3AFC0C00E4B908 /* Project.swift in Sources */,
+				49A09DB41ACC0B0E004DFD31 /* TabBarViewController.swift in Sources */,
 				49D72E851A3AFC2F00E4B908 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +433,7 @@
 		493E46E81AB9AA6200FF697E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -436,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -445,6 +459,7 @@
 		493E46E91AB9AA6200FF697E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
