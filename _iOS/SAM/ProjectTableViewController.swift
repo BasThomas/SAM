@@ -13,7 +13,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 {
     var projects = [Project]()
     var filteredProjects = [Project]()
-	var students = [Student]()
+	var students = [Student]() // Make this a Set soon!
     
     required init(coder aDecoder: NSCoder)
 	{
@@ -201,6 +201,8 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 			{
 				var id: Int!
 				var name: String!
+				var startDate: NSDate!
+				var endDate: NSDate?
 				
 				if let _id = project.key as? String
 				{
@@ -212,11 +214,30 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 					name = _name
 				}
 				
-				if id != nil && name != nil
+				if let _startDate = project.value["startdate"] as? String
 				{
-					let project = Project(id: id, name: name)
-					self.projects.append(project)
+					let formatter = NSDateFormatter()
+					formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 					
+					startDate = formatter.dateFromString(_startDate)
+					
+					if let _endDate = project.value["enddate"] as? String
+					{
+						let tempEndDate = formatter.dateFromString(_endDate)
+						
+						if startDate < tempEndDate
+						{
+							endDate = tempEndDate
+						}
+					}
+				}
+				
+				if id != nil && name != nil && startDate != nil
+				{
+					let project = Project(id: id, name: name, startDate: startDate, endDate: endDate)
+					println("Project enddate for \(project.name) is \(project.endDate)")
+					self.projects.append(project)
+
 					let req = Request(delegate: self)
 					req.get(request: "projectinfo.php", withParams: ["key": "SAMjson", "id": "\(id)"])
 				}

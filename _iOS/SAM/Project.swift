@@ -12,23 +12,28 @@ public class Project
 {
     public var id: Int
     public var name: String
+	public var startDate: NSDate
+	public var endDate: NSDate?
     public var students = [Student]()
     public var teacher: Teacher?
 	
-	public init(id: Int, name: String)
+	public init(id: Int, name: String, startDate: NSDate, endDate: NSDate?)
 	{
 		self.id = id
 		self.name = name
+		
+		self.startDate = startDate
+		self.endDate = endDate
 	}
 	
-    public convenience init(name: String)
+	public convenience init(name: String, startDate: NSDate, endDate: NSDate?)
     {
-		self.init(id: 1, name: name)
+		self.init(id: 1, name: name, startDate: startDate, endDate: endDate)
     }
 	
-	public convenience init(id: Int)
+	public convenience init(id: Int, startDate: NSDate, endDate: NSDate?)
 	{
-		self.init(id: id, name: "Unknown")
+		self.init(id: id, name: "Unknown", startDate: startDate, endDate: endDate)
 	}
     
     public func addStudent(student: Student) -> [Student]

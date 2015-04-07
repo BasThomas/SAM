@@ -30,3 +30,18 @@ extension UIColor
 		return UIColor(red: 0.788, green: 0.788, blue: 0.808, alpha: 1)
 	}
 }
+
+extension NSDate: Equatable, Comparable
+{
+	
+}
+
+public func ==(lhs: NSDate, rhs: NSDate) -> Bool
+{
+	return lhs.timeIntervalSince1970 == rhs.timeIntervalSince1970
+}
+
+public func <(lhs: NSDate, rhs: NSDate) -> Bool
+{
+	return lhs.timeIntervalSince1970 < rhs.timeIntervalSince1970
+}
