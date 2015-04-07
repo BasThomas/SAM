@@ -24,4 +24,9 @@ public class Student
 		
 		self.fullName = " ".join([surName, lastName])
     }
+	
+	public convenience init(_ surName: String)
+	{
+		self.init(surName, lastName: "")
+	}
 }

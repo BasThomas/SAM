@@ -14,14 +14,24 @@ public class Project
     public var name: String
     public var students = [Student]()
     public var teacher: Teacher?
-    
-    public init(name: String)
+	
+	public init(id: Int, name: String)
+	{
+		self.id = id
+		self.name = name
+	}
+	
+    public convenience init(name: String)
     {
-        self.id = 1
-        self.name = name
+		self.init(id: 1, name: name)
     }
+	
+	public convenience init(id: Int)
+	{
+		self.init(id: id, name: "Unknown")
+	}
     
-    public func addUser(student: Student) -> [Student]
+    public func addStudent(student: Student) -> [Student]
     {
         self.students.append(student)
         

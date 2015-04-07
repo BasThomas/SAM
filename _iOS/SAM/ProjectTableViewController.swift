@@ -9,37 +9,18 @@
 import UIKit
 import SAMKit
 
-class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate
+class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate, RequestDelegate
 {
     var projects = [Project]()
     var filteredProjects = [Project]()
+	var students = [Student]()
     
     required init(coder aDecoder: NSCoder)
-    {
-        let project1 = Project(name: "SAM")
-		let user1 = Student("Bas", lastName: "Broek")
-		let user2 = Student("Sunny", lastName: "Feijen")
-		let user3 = Student("Stan", lastName: "Jansen")
-		let user4 = Student("Joris", lastName: "van Oers")
-		let user5 = Student("Aline", lastName: "Swinkels")
-		let teacher1 = Teacher("Coen", lastName: "Crombach")
-		
-        project1.addTeacher(teacher1)
-        project1.addUser(user1)
-        project1.addUser(user2)
-		project1.addUser(user3)
-		project1.addUser(user4)
-		project1.addUser(user5)
-		
-        let project2 = Project(name: "Pepper's Ghost")
-        let project3 = Project(name: "STRP")
-        let project4 = Project(name: "KPN")
-        
-        self.projects += [project1, project2, project3, project4]
-        
+	{
         super.init(coder: aDecoder)
 		
-		self.sortProjects()
+		let req = Request(delegate: self)
+		req.get(request: "userinfo.php", withParams: ["pcn": "300486", "key": "SAMjson"])
     }
 	
 	override func viewWillAppear(animated: Bool)
@@ -183,10 +164,99 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
             dvc.project = cell.project
         }
     }
+	
+	// MARK: - Request delegate
+	func handleJSON(json: NSDictionary, forRequest request: String, withParams params: [String : String])
+	{
+		switch (request)
+		{
+			case "userinfo.php":
+				self.setupProjects(json)
+			
+			case "projectinfo.php":
+				self.setupUsers(json, forProject: params["id"])
+			
+			default:
+				return
+		}
+	}
+	
+	func handleError(error: NSError)
+	{
+		//
+	}
+	
+	func handleActionFeedback(forMethod method: String)
+	{
+		//
+	}
     
     // MARK: - Methods
+	
+	private func setupProjects(json: NSDictionary)
+	{
+		if let projects = json["projects"] as? NSDictionary
+		{
+			for project in projects
+			{
+				var id: Int!
+				var name: String!
+				
+				if let _id = project.key as? String
+				{
+					id = _id.toInt()
+				}
+				
+				if let _name = project.value["name"] as? String
+				{
+					name = _name
+				}
+				
+				if id != nil && name != nil
+				{
+					let project = Project(id: id, name: name)
+					self.projects.append(project)
+					
+					let req = Request(delegate: self)
+					req.get(request: "projectinfo.php", withParams: ["key": "SAMjson", "id": "\(id)"])
+				}
+			}
+			
+			self.sortProjects()
+		}
+	}
+	
+	private func setupUsers(json: NSDictionary, forProject project: String?)
+	{
+		if let id = project
+		{
+			if let project = self.project(forID: id.toInt())
+			{
+				if let students = json["students"] as? NSDictionary
+				{
+					for student in students
+					{
+						var surName: String!
+						
+						if let _surName = student.key as? String
+						{
+							surName = _surName
+						}
+						
+						if surName != nil
+						{
+							let student = Student(surName)
+							project.addStudent(student)
+							
+							self.students.append(student)
+						}
+					}
+				}
+			}
+		}
+	}
     
-    func filterContentForSearchText(searchText: String)
+    private func filterContentForSearchText(searchText: String)
     {
         self.filteredProjects = self.projects.filter(
 		{
@@ -196,8 +266,25 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 		})
     }
 	
-	func sortProjects()
+	private func sortProjects()
 	{
 		self.projects = sorted(self.projects) {$0.name < $1.name}
+		tableView.reloadData()
+	}
+	
+	private func project(forID id: Int?) -> Project?
+	{
+		if let id = id
+		{
+			for project in self.projects
+			{
+				if project.id == id
+				{
+					return project
+				}
+			}
+		}
+		
+		return nil
 	}
 }

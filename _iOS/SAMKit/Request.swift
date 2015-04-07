@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that Request uses to inform its delegate of state change
-protocol RequestDelegate
+public protocol RequestDelegate
 {
 	/**
 		Function for handling JSON response.
@@ -36,7 +36,7 @@ protocol RequestDelegate
 }
 
 /// Used to send webrequests.
-class Request
+public class Request
 {
 	/// The delegate of the request.
 	var delegate: RequestDelegate!
@@ -44,19 +44,10 @@ class Request
 	/// The basestring of the request.
 	var baseString: String!
 	
-	/// The username
-	var username: String!
-	
-	/// The password
-	var password: String!
-	
-	init(delegate: RequestDelegate, username: String, password: String)
+	public init(delegate: RequestDelegate)
 	{
 		self.delegate = delegate
-		self.baseString = "http://deltafhict.nl/sam/"
-		
-		self.username = username
-		self.password = password
+		self.baseString = "http://i300486.iris.fhict.nl/SAM/"
 	}
 	
 	/**
@@ -65,7 +56,7 @@ class Request
 		:param: request The request to get.
 		:param: params The params to add.
 	*/
-	func get(request requestString: String, withParams params: [String: String])
+	public func get(request requestString: String, withParams params: [String: String])
 	{
 		self.doRequest("GET", request: requestString, withParams: params)
 	}
@@ -76,7 +67,7 @@ class Request
 		:param: request The request to post.
 		:param: params The params to add.
 	*/
-	func post(request requestString: String, withParams params: [String: String])
+	public func post(request requestString: String, withParams params: [String: String])
 	{
 		self.doRequest("POST", request: requestString, withParams: params)
 	}
@@ -87,7 +78,7 @@ class Request
 		:param: request The request to put.
 		:param: params The params to add.
 	*/
-	func put(request requestString: String, withBody body: [String: String])
+	public func put(request requestString: String, withBody body: [String: String])
 	{
 		if NSJSONSerialization.isValidJSONObject(body as AnyObject)
 		{
@@ -107,7 +98,7 @@ class Request
 		:param: request The request to delete.
 		:param: params The params to add.
 	*/
-	func delete(request requestString: String, withParams params: [String: String])
+	public func delete(request requestString: String, withParams params: [String: String])
 	{
 		self.doRequest("DELETE", request: requestString, withParams: params)
 	}
@@ -139,12 +130,12 @@ class Request
 		}
 		
 		// Authorization
-		let loginString = "\(self.username):\(self.password)"
-		let utf8String = (loginString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-		let base64String = utf8String?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+		//let loginString = "\(self.username):\(self.password)"
+		//let utf8String = (loginString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+		//let base64String = utf8String?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
 		
 		// Headers
-		request.addValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
+		//request.addValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
 		
 		let task = session.dataTaskWithRequest(request, completionHandler:
 		{
@@ -204,7 +195,7 @@ class Request
 		
 		:returns: The created parameters string.
 	*/
-	func stringFromQueryParameters(queryParameters: [String: String]) -> String
+	private func stringFromQueryParameters(queryParameters: [String: String]) -> String
 	{
 		var parts = [String]()
 		for (name, value) in queryParameters
@@ -226,7 +217,7 @@ class Request
 		
 		:returns: A new NSURL.
 	*/
-	func NSURLByAppendingQueryParameters(URL: NSURL!, queryParameters: [String: String]) -> NSURL
+	private func NSURLByAppendingQueryParameters(URL: NSURL!, queryParameters: [String: String]) -> NSURL
 	{
 		let URLString : NSString = NSString(format: "%@?%@", URL.absoluteString!, self.stringFromQueryParameters(queryParameters))
 		
