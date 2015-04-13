@@ -87,7 +87,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as DefaultTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as! DefaultTableViewCell
 
         // Configure the cell...
         
@@ -158,8 +158,8 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     {
         if segue.identifier == "detail"
         {
-            let dvc = segue.destinationViewController as DetailTableViewController
-            let cell = sender as DefaultTableViewCell
+            let dvc = segue.destinationViewController as! DetailTableViewController
+            let cell = sender as! DefaultTableViewCell
             
             dvc.project = cell.project
         }
@@ -183,18 +183,19 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 	
 	func handleError(error: NSError)
 	{
-		//
+		println("handleError(): \(error.localizedDescription)")
 	}
 	
 	func handleActionFeedback(forMethod method: String)
 	{
-		//
+		println("handleActionFeedback (for method \(method))")
 	}
     
     // MARK: - Methods
 	
 	private func setupProjects(json: NSDictionary)
 	{
+		println(json)
 		if let projects = json["projects"] as? NSDictionary
 		{
 			for project in projects
@@ -249,6 +250,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 	
 	private func setupUsers(json: NSDictionary, forProject project: String?)
 	{
+		println(json)
 		if let id = project
 		{
 			if let project = self.project(forID: id.toInt())

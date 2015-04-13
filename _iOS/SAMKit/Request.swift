@@ -86,7 +86,7 @@ public class Request
 			{
 				if let body = NSString(data: data, encoding: NSUTF8StringEncoding)
 				{
-					self.doRequest("PUT", request: requestString, withParams: ["":""], withBody: body)
+					self.doRequest("PUT", request: requestString, withParams: ["":""], withBody: body as String)
 				}
 			}
 		}
@@ -166,7 +166,7 @@ public class Request
 			
 			var err: NSError?
 			
-			var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as NSDictionary
+			var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as! NSDictionary
 			
 			if let error = err
 			{
@@ -203,7 +203,7 @@ public class Request
 			var part = NSString(format: "%@=%@",
 				name.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!,
 				value.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
-			parts.append(part)
+			parts.append(part as String)
 		}
 		
 		return "&".join(parts)
@@ -221,6 +221,6 @@ public class Request
 	{
 		let URLString : NSString = NSString(format: "%@?%@", URL.absoluteString!, self.stringFromQueryParameters(queryParameters))
 		
-		return NSURL(string: URLString)!
+		return NSURL(string: URLString as String)!
 	}
 }

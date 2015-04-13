@@ -67,7 +67,7 @@ class DetailTableViewController: UITableViewController
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
-        let cell = tableView.dequeueReusableCellWithIdentifier("user", forIndexPath: indexPath) as UserTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("user", forIndexPath: indexPath) as! UserTableViewCell
 
         // Configure the cell...
 		

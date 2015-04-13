@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController
 
         // Do any additional setup after loading the view.
 		
-		UITabBar.appearance().selectedImageTintColor = .fontysColor()
+		UITabBar.appearance().tintColor = .fontysColor()
     }
 
     override func didReceiveMemoryWarning()
