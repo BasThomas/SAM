@@ -43,20 +43,16 @@ class DetailTableViewController: UITableViewController
     override func didReceiveMemoryWarning()
 	{
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
 	{
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
-        // Return the number of rows in the section.
 		if let project = self.project
 		{
 			return project.students.count
@@ -68,8 +64,6 @@ class DetailTableViewController: UITableViewController
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
         let cell = tableView.dequeueReusableCellWithIdentifier("user", forIndexPath: indexPath) as! UserTableViewCell
-
-        // Configure the cell...
 		
 		if let project = self.project
 		{

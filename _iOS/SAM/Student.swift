@@ -10,6 +10,7 @@ import UIKit
 
 public class Student
 {
+	public var code: Int
 	public var surName: String
     public var lastName: String
 	
@@ -17,16 +18,32 @@ public class Student
 	
 	public var grade: Int?
     
-	public init(_ surName: String, lastName: String)
+	public init(_ surName: String, lastName: String, code: Int)
     {
+		self.code = code
         self.surName = surName
 		self.lastName = lastName
 		
 		self.fullName = " ".join([surName, lastName])
     }
 	
-	public convenience init(_ surName: String)
+	public convenience init(_ surName: String, code: Int)
 	{
-		self.init(surName, lastName: "")
+		self.init(surName, lastName: "", code: code)
 	}
+}
+
+// MARK: - Hashable
+extension Student: Hashable
+{
+	/// The hash value.
+	public var hashValue: Int
+	{
+		return self.code.hashValue
+	}
+}
+
+public func ==(lhs: Student, rhs: Student) -> Bool
+{
+	return lhs.code == rhs.code
 }

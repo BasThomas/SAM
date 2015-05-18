@@ -14,8 +14,6 @@ class TabBarViewController: UITabBarController
     override func viewDidLoad()
 	{
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
 		
 		UITabBar.appearance().tintColor = .fontysColor()
     }
@@ -23,6 +21,5 @@ class TabBarViewController: UITabBarController
     override func didReceiveMemoryWarning()
 	{
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

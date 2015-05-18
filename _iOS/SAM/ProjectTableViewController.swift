@@ -13,7 +13,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 {
     var projects = [Project]()
     var filteredProjects = [Project]()
-	var students = [Student]() // Make this a Set soon!
+	var students = Set<Student>()//[Student]() // Make this a Set soon!
     
     required init(coder aDecoder: NSCoder)
 	{
@@ -44,11 +44,9 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Searchbar data source
-    
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool
     {
         self.filterContentForSearchText(searchString)
@@ -64,33 +62,25 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
     
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        // Return the number of rows in the section.
-        
         if tableView == self.searchDisplayController!.searchResultsTableView
         {
             return self.filteredProjects.count
         }
-        else
-        {
-            return self.projects.count
-        }
+		
+		return self.projects.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as! DefaultTableViewCell
-
-        // Configure the cell...
-        
+		
         var project: Project
         
         if tableView == self.searchDisplayController!.searchResultsTableView
@@ -153,7 +143,6 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
     }
 
     // MARK: - Navigation
-	
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if segue.identifier == "detail"
@@ -259,19 +248,26 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 				{
 					for student in students
 					{
+						var code: Int!
 						var surName: String!
+						
+						if let _code = student.key as? String
+						{
+							code = _code.toInt()
+						}
 						
 						if let _surName = student.key as? String
 						{
 							surName = _surName
 						}
 						
-						if surName != nil
+						if surName != nil &&
+							code != nil
 						{
-							let student = Student(surName)
+							let student = Student(surName, code: code)
 							project.addStudent(student)
 							
-							self.students.append(student)
+							self.students.insert(student)
 						}
 					}
 				}

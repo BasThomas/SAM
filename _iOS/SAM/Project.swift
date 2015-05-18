@@ -67,3 +67,18 @@ public class Project
 		return amount
 	}
 }
+
+// MARK: - Hashable
+extension Project: Hashable
+{
+	/// The hash value.
+	public var hashValue: Int
+	{
+		return self.id.hashValue
+	}
+}
+
+public func ==(lhs: Project, rhs: Project) -> Bool
+{
+	return lhs.id == rhs.id
+}
