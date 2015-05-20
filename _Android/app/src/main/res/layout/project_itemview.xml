@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="75dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/naamView"
+        android:autoText="false"
+        android:paddingRight="20dp"
+        android:paddingLeft="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/checkSwitch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:singleLine="true"
+        android:text="naamView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="routeView"
+        android:id="@+id/routeView"
+        android:autoText="false"
+        android:paddingRight="20dp"
+        android:paddingLeft="6dp"
+        android:textColor="#ff696969"
+        android:layout_below="@+id/naamView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/checkSwitch"
+        android:layout_toStartOf="@+id/checkSwitch"
+        android:singleLine="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkSwitch"
+        android:track="@drawable/apptheme_switch_track_holo_light"
+        android:thumb="@drawable/apptheme_switch_inner_holo_light"
+        android:layout_marginRight="9dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textOn=""
+        android:textOff=""
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/idView"
+        android:layout_alignBottom="@+id/naamView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="00:00:00"
+        android:id="@+id/timeText"
+        android:layout_below="@+id/checkSwitch"
+        android:layout_alignRight="@+id/checkSwitch"
+        android:layout_alignEnd="@+id/checkSwitch"
+        android:visibility="gone"/>
+</RelativeLayout>
