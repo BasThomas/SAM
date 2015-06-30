@@ -13,7 +13,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 {
     var projects = [Project]()
     var filteredProjects = [Project]()
-	var students = Set<Student>()//[Student]() // Make this a Set soon!
+	var students = Set<Student>()
     
     required init(coder aDecoder: NSCoder)
 	{
@@ -185,7 +185,7 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 	private func setupProjects(json: NSDictionary)
 	{
 		println(json)
-		if let projects = json["projects"] as? NSDictionary
+		if let projects = json["projects"] as? NSArray
 		{
 			for project in projects
 			{
@@ -194,24 +194,24 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 				var startDate: NSDate!
 				var endDate: NSDate?
 				
-				if let _id = project.key as? String
+				if let _id = project["id"] as? String
 				{
 					id = _id.toInt()
 				}
 				
-				if let _name = project.value["name"] as? String
+				if let _name = project["name"] as? String
 				{
 					name = _name
 				}
 				
-				if let _startDate = project.value["startdate"] as? String
+				if let _startDate = project["startdate"] as? String
 				{
 					let formatter = NSDateFormatter()
 					formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 					
 					startDate = formatter.dateFromString(_startDate)
 					
-					if let _endDate = project.value["enddate"] as? String
+					if let _endDate = project["enddate"] as? String
 					{
 						let tempEndDate = formatter.dateFromString(_endDate)
 						
@@ -239,24 +239,24 @@ class ProjectTableViewController: UITableViewController, UISearchBarDelegate, UI
 	
 	private func setupUsers(json: NSDictionary, forProject project: String?)
 	{
-		println(json)
+		//println(json)
 		if let id = project
 		{
 			if let project = self.project(forID: id.toInt())
 			{
-				if let students = json["students"] as? NSDictionary
+				if let students = json["students"] as? NSArray
 				{
 					for student in students
 					{
 						var code: Int!
 						var surName: String!
 						
-						if let _code = student.key as? String
+						if let _code = student["checkedin"] as? Int
 						{
-							code = _code.toInt()
+							code = _code
 						}
 						
-						if let _surName = student.key as? String
+						if let _surName = student["pcn"] as? String
 						{
 							surName = _surName
 						}
